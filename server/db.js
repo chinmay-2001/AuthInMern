@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mongoURI="mongodb://localhost:27017"
+const mongoURI="mongodb+srv://snehal75:1306@testcluster1.5klwo.mongodb.net/User_db?retryWrites=true&w=majority"
 
 module.exports = () => {
 	const connectionParams = {
