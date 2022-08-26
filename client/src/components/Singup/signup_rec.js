@@ -89,7 +89,7 @@ const Signup_rec = () => {
                         {/* console.log("here") */}
 						{error && <div className={styles.error_msg}>{error}</div>}
                         {/* console.log("1232") */}
-						<button type="submit" className={styles.green_btn}>
+						<button type="submit" className={styles.green_btn} >
 							Sign Up
 						</button>
 					</form>
