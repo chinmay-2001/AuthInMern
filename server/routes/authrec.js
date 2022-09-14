@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
 		console.log("second");
 		console.log(req.body.email)
 		// console.log(User)
-		const user = await student.findOne({ email: req.body.email });
+		const user = await recruiter.findOne({ email: req.body.email });
 		if (!user)
 			return res.status(401).send({ message: "Invalid Email or Password" });
 		console.log("third")

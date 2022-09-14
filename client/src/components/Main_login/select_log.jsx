@@ -17,7 +17,7 @@ const Select_log = () => {
                 </div>
                 <br /><br /><br /><br /><br />
                 <div className="row ">
-                    <div className="col offset-3"><Button href="/login" variant="success">Student</Button>{' '}</div>
+                    <div className="col offset-3"><Button href="/login" variant="success" >Student</Button>{' '}</div>
                     <div className="col "><Button variant="success" href="/login_rec">Recruitor</Button>{' '}</div>
 
                 </div>
