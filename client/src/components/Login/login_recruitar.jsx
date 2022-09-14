@@ -34,7 +34,7 @@ const Login_recruitar = () => {
 			<div className={styles.login_form_container}>
 				<div className={styles.left}>
 					<form className={styles.form_container} onSubmit={handleSubmit}>
-						<h1>Recruitar Login</h1>
+						<h1>Recruiter Login</h1>
 						<input
 							type="email"
 							placeholder="Email"
@@ -55,7 +55,7 @@ const Login_recruitar = () => {
 						/>
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
-							Sing In
+							Sign In
 						</button>
 					</form>
 				</div>

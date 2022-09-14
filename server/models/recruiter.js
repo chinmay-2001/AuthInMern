@@ -20,17 +20,17 @@ userSchema.methods.generateAuthToken = function () {
 
 const recruiter = mongoose.model("recruiter", userSchema);
 
-// const validate = (data) => {
-// 	console.log("123")
-// 	const schema = Joi.object({
-// 		job_id: Joi.string().required().label("First Name"),
-// 		lastName: Joi.string().required().label("Last Name"),
-// 		email: Joi.string().email().required().label("Email"),
-// 		password: passwordComplexity().required().label("Password"),
-// 	});
-// 	console.log("456")
-// 	return schema.validate(data);
-// };
+const validate = (data) => {
+	console.log("123")
+	const schema = Joi.object({
+		job_id: Joi.string().required().label("First Name"),
+		lastName: Joi.string().required().label("Last Name"),
+		email: Joi.string().email().required().label("Email"),
+		password: passwordComplexity().required().label("Password"),
+	});
+	console.log("456")
+	return schema.validate(data);
+};
 
-// module.exports = { recruiter, validate };
-module.exports = { recruiter };
+module.exports = { recruiter, validate };
+// module.exports = { recruiter };

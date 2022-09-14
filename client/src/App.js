@@ -15,7 +15,7 @@ function App() {
 
 	return (
 		<Routes>
-			{user && <Route path="/" exact element={<Profile_com />} />}
+			{user && <Route path="/" exact element={<><Sidebar_copy/><Dashboard flag="1"/></>} />}
 			<Route path="/signup" exact element={<Signup />} />
 			<Route path="/signup_rec" exact element={<Signup_rec />} />
 			<Route path="/login" exact element={<Login />} />
