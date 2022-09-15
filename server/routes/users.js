@@ -10,6 +10,7 @@ router.post("/", async (req, res) => {
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 		console.log("2")
+		console.log({ email: req.body.email })
 		// const user = await User.findOne({ email: req.body.email });
 		const user = await student.findOne({ email: req.body.email });  //for checking is user already exist
 		console.log("3")

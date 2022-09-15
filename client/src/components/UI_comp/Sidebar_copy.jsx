@@ -43,6 +43,10 @@ export default function Sidebar() {
       }
     );
   }, []);
+  const handleLogout=()=>{
+    localStorage.removeItem("token");
+		window.location.reload();
+  }
 
   return (
     <>
@@ -104,8 +108,9 @@ export default function Sidebar() {
             </ul>
           </div> 
         </div>
+        
         <div className="logout">
-          <a href="#">
+          <a onClick={handleLogout}>
             <FiLogOut />
             <span className="logout">Logout</span>
           </a>
@@ -187,12 +192,13 @@ const Section = styled.section`
     }
   }
   .logout {
-    position:relative;
-    bottom:20px;
+    // position:relative;
+    // bottom:20px;
     padding: 0.3rem 1rem;
     border-radius: 0.6rem;
-   margin:auto;
-    font-size:10px;
+    margin:auto;
+    width:120px;
+    // font-size:10px;
     &:hover {
       background-color: #da0037;
     }
