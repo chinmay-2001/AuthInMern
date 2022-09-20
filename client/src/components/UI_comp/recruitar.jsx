@@ -10,7 +10,7 @@ import axios from 'axios'
 export default function Recuitar(){
     const [show, setShow] = useState(false);
     const [error, setError] = useState("");
-    let [responseData,setresponseData]=useState([])
+    let [responseData,setresponseData]=useState([]);
     const [data, setData] = useState({ Company: "", Title: "",date:"" });
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);

@@ -1,56 +1,69 @@
 import React from "react";
 import styled from "styled-components";
+import { useEffect,useState } from "react";
+import axios from "axios";
 // import { HiArrowNarrowRight } from "react-icons/hi";
 import avatarImage from "./asset/avatarImage.jpeg";
 import { cardStyles } from "./ReusableStyles";
 
 // import { FiLogOut } from "react-icons/fi";
 export default function TransfersCopy() {
+  let [responseData,setresponseData]=useState([])
+  // const transactions = [
+  //   {
+  //     key:1,
+  //     image: avatarImage,
+  //     name: "Google",
+  //     time: "Before 25 August",
+  //     desciption:"AI/ML",
+  //   },
+  //   {
+  //     key:2,
+  //     image: avatarImage,
+  //     name: "Facebook",
+  //     time: "Befor 15 August",
+  //     desciption:"Web development",
+  //   },
+  //   {
+  //     key:3,
+  //     image: avatarImage,
+  //     name: "Vmware",
+  //     time: "Before 16 August",
+  //     desciption:"Android",
+  //   },
+  //   {
+  //     key:4,
+  //       image: avatarImage,
+  //       name: "Fivetran",
+  //       time: "Before 25 August",
+  //       desciption:"Cloud",
+  //     },
+  //     {
+  //       key:5,
+  //       image: avatarImage,
+  //       name: "Nutenix",
+  //       time: "Befor 1 November",
+  //       desciption:"AWS",
+  //     },
+  //     {
+  //       key:6,
+  //       image: avatarImage,
+  //       name: "Barclays",
+  //       time: "Before 16 August",
+  //       desciption:"Salesforces",s
+  //     },
+  // ];
+  useEffect(()=>{
+        
+    axios.post('http://localhost:8081/api/getjob').then(res=>{
+      console.log(res.data)
+      setresponseData(res.data);
+    }).catch(err=>{
+      console.log(err);
+    })
+  console.log("responce",responseData);
+  },[]);
 
-  const transactions = [
-    {
-      key:1,
-      image: avatarImage,
-      name: "Google",
-      time: "Before 25 August",
-      desciption:"AI/ML",
-    },
-    {
-      key:2,
-      image: avatarImage,
-      name: "Facebook",
-      time: "Befor 15 August",
-      desciption:"Web development",
-    },
-    {
-      key:3,
-      image: avatarImage,
-      name: "Vmware",
-      time: "Before 16 August",
-      desciption:"Android",
-    },
-    {
-      key:4,
-        image: avatarImage,
-        name: "Fivetran",
-        time: "Before 25 August",
-        desciption:"Cloud",
-      },
-      {
-        key:5,
-        image: avatarImage,
-        name: "Nutenix",
-        time: "Befor 1 November",
-        desciption:"AWS",
-      },
-      {
-        key:6,
-        image: avatarImage,
-        name: "Barclays",
-        time: "Before 16 August",
-        desciption:"Salesforces",
-      },
-  ];
   return (  
     <Section>
       <div className="title">
@@ -69,30 +82,30 @@ export default function TransfersCopy() {
         </thead>
         <tbody>
               
-               {transactions.map((transaction) => {
+               {responseData.map((responseData) => {
                 // console.log(transaction.desciption)
                 return(
                   
                  
                   <tr style={{color:"white"}}>
                     <td>
-                      <div className="transaction_image">
+                      {/* <div className="transaction_image">
                         <img src={transaction.image} alt="" />
-                      </div>
-                      {transaction.name}
+                      </div> */}
+                      {responseData.Company}
                     </td>
 
                     <td>
-                      {transaction.desciption}
+                      {responseData.Title}
                     </td>
 
                     <td>
-                      {transaction.time}
+                      {responseData.date}
                     </td>
 
                     <td>
                       <div className="button_style">
-                        <a href="#" className="btn btn-link btn-sm btn-rounded"><span>Apply</span></a>
+                        <a href="#" className="btn btn-link btn-sm btn-rounded"><span>delete</span></a>
                       </div>
                     </td>
                   </tr>
