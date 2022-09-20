@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import styles from "./styles.module.css";
+import { BrowserRouter,Router,Route } from "react-router-dom";
 
 const Login_recruitar = () => {
 	const [data, setData] = useState({ email: "", password: "" });
@@ -18,6 +19,7 @@ const Login_recruitar = () => {
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/";
+			return <Navigate replace to="/main_rec"/>
 		} catch (error) {
 			if (
 				error.response &&
@@ -54,7 +56,7 @@ const Login_recruitar = () => {
 							className={styles.input}
 						/>
 						{error && <div className={styles.error_msg}>{error}</div>}
-						<button type="submit" className={styles.green_btn}>
+						<button type="submit" className={styles.green_btn} onClick={handleSubmit}>
 							Sign In
 						</button>
 					</form>

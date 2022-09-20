@@ -55,7 +55,7 @@ export default function Sidebar() {
         <div className="top">
           <div className="brand">
             {/* <FaTaxi /> */} 
-            <span> Student Dashboard</span> 
+            <span> Recuiter Dashboard Dashboard</span> 
           </div> 
           
           <div className="links">
@@ -65,9 +65,9 @@ export default function Sidebar() {
                 onClick={() => setCurrentLink(1)}
               >
                 {/* <a href="#"> */}
-                <Link to="/">
+                <Link to="/AddLink">
                   <BsBagCheckFill/>
-                  <span> Opportunities</span>
+                  <span> AddLink</span>
 
                 </Link>
               </li>

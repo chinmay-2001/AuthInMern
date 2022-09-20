@@ -70,7 +70,7 @@ export default function TransfersCopy() {
         <tbody>
               
                {transactions.map((transaction) => {
-                console.log(transaction.desciption)
+                // console.log(transaction.desciption)
                 return(
                   
                  

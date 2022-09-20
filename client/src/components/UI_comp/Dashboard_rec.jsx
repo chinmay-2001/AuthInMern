@@ -1,16 +1,10 @@
-import React from 'react'
+import {react} from 'react'
 import styled from 'styled-components'
 import Navbar from './Navbar';
 import Status from './Status';
 import Button from 'react-bootstrap/Button';
-
-// import Transfers from './Transfer';
-// import Faq from './Faq';
-import TransfersCopy from './TransferCopy';
-
-export default function Dashboard(props) {
-  // <h1>{props.name}</h1>
-  // if(pr=="1"){
+import Recruitar from './Recruitar';
+export default function Dashboard_rec(props){
     const va=props.flag;
     if(va==="1"){
       // console.log("dashboard");
@@ -20,7 +14,7 @@ export default function Dashboard(props) {
             <div className="grid">
             <Button href="/profile/update" variant="success">Profile</Button>{' '}
                 <div className="row__one">
-                      <TransfersCopy/>
+                      <Recruitar/>
                 </div>
             </div>
           
@@ -40,6 +34,7 @@ export default function Dashboard(props) {
       )
     }
 }
+
 const Section = styled.section`
   margin-left: 18vw;
   padding: 2rem;

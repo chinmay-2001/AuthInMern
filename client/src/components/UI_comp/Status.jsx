@@ -3,9 +3,16 @@ import styled from "styled-components";
 // import { HiArrowNarrowRight } from "react-icons/hi";
 import avatarImage from "./asset/avatarImage.jpeg";
 import { cardStyles } from "./ReusableStyles";
-
+import axios from 'axios';
 // import { FiLogOut } from "react-icons/fi";
 export default function Status() {
+
+
+  axios.post('http://localhost:8080/api/getdata').then(res=>{
+      console.log(res.data)
+  }).catch(err=>{
+    console.log(err);
+  })
 
   const transactions = [
     {
@@ -60,7 +67,7 @@ export default function Status() {
           </tr>
         </thead>
         <tbody>
-              
+
                {transactions.map((transaction) => {
                 console.log(transaction.desciption)
                 return(

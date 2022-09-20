@@ -8,6 +8,8 @@ import Login_recruitar from "./components/Login/login_recruitar";
 import Profile_com from "./components/Singup/profile_com";
 import Dashboard from "./components/UI_comp/Dashboard"
 import Sidebar_copy from "./components/UI_comp/Sidebar_copy"
+import Sidebar_rec from "./components/UI_comp/Sidebar_rec"
+import Dashboard_rec from "./components/UI_comp/Dashboard_rec";
 
 function App() {
 	
@@ -23,11 +25,11 @@ function App() {
 			<Route path="/login_rec" exact element={<Login_recruitar/>}/>
 			<Route path="/main_login" exact element={<Select_log />}/>
 			<Route path="/" element={<Navigate replace to="/main_login" />} />
-			
-			
-			<Route path="/profile" exact element={<><Sidebar_copy/><Dashboard flag="1"/></>}>
-			</Route>
+			<Route path="/" exact element={<><Sidebar_copy/><Dashboard flag="1"/></>}></Route>
+			<Route path="/profile/status" exact element={<><Sidebar_copy/><Dashboard flag="2"/></>}></Route>
 			<Route path="/profile/update" exact element={<Profile_com/>}/>
+			<Route path="/main_rec" exact element={<><Sidebar_rec/><Dashboard_rec flag="1"/></>}/>
+			<Route path='/AddLink' exact element={<><Sidebar_rec/><Dashboard_rec flag="1"/></>}/>
 			
 		</Routes>
 	);
