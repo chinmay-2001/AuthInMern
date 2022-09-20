@@ -166,27 +166,3 @@ const Section = styled.section`
 `;
 
 
-// <tr>
-//   <td >
-//     <div className="d-flex align-items-center"/>
-//     {/* <img src={transaction.image}
-//     style="width:45px;height:45px" class="rounded-circle"/> */}
-//     <div className="ms-3">
-//       <p className="fw-bold mb-1">{transaction.name}</p>
-//       {/* <p className="text-muted mb-0">john.doe@gmail.com</p> */}
-//     </div>
-//   </td> 
-//   <td key={transaction.key}>
-//     <p className="fw-normal mb-1">{transaction.desciption}</p>
-//     {/* <p className="text-muted mb-0">IT department</p> */}
-//   </td>
-//   <td key={transaction.key}>
-//     <span className="badge badge-success rounded-pill d-inline">Active</span>
-//   </td>
-//   <td key={transaction.key}>Senior</td>
-//   <td key={transaction.key}>
-//     <button type="button" className="btn btn-link btn-sm btn-rounded">
-//       Apply
-//     </button>
-//   </td>
-// </tr>

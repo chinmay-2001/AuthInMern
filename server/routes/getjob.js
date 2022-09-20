@@ -1,10 +1,12 @@
 const router = require("express").Router();
-const { student } = require("../models/user");
+const { job } = require("../models/job");
+
+// const { database } =require("../db_rec");
 
 
 router.post("/",async (req,resp)=>{
     try {
-        student.find().then((result)=>{
+        job.find().then((result)=>{
             resp.send(result)
         }).catch((err)=>{
             console.log(err);

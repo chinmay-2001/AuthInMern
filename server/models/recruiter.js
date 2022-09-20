@@ -9,13 +9,7 @@ const userSchema = new mongoose.Schema({
 		email: { type: String, required: true },
 		password: { type: String, required: true },
 	},
-	// {
-	// 	statics:{
-	// 		selectall(){
-	// 			return this.
-	// 		}
-	// 	}
-	// }
+	
 	);
 
 userSchema.methods.generateAuthToken = function () {
