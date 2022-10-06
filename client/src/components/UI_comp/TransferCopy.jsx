@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { useEffect,useState } from "react";
 import axios from "axios";
 // import { HiArrowNarrowRight } from "react-icons/hi";
-import avatarImage from "./asset/avatarImage.jpeg";
 import { cardStyles } from "./ReusableStyles";
 
 // import { FiLogOut } from "react-icons/fi";
 export default function TransfersCopy() {
   let [responseData,setresponseData]=useState([])
+  
   // const transactions = [
   //   {
   //     key:1,
@@ -53,6 +53,8 @@ export default function TransfersCopy() {
   //       desciption:"Salesforces",s
   //     },
   // ];
+
+
   useEffect(()=>{
         
     axios.post('http://localhost:8081/api/getjob').then(res=>{

@@ -8,6 +8,7 @@ const authRoutes = require("./routes/authrec");
 const recRoutes =require("./routes/recruiter")
 const addjob=require("./routes/job") 
 const getjob=require("./routes/getjob")
+const deljob=require("./routes/deljob")
 
 // database connection
 connection();
@@ -22,6 +23,7 @@ app.use("/api/recruiter", recRoutes);
 app.use("/api/authr", authRoutes);
 app.use("/api/job",addjob);
 app.use("/api/getjob",getjob);
+app.use("/api/deljob",deljob)
 
 const port =  8081;
 app.listen(port, console.log(`Listening on port ${port}...`));

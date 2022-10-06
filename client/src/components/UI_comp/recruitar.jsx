@@ -18,10 +18,12 @@ export default function Recuitar(){
         setData({ ...data, [input.name]: input.value });
     }
     const handleSubmit = async (e) =>{
+      // function handleSubmit (){
         e.preventDefault();
         try {
             const url = "http://localhost:8081/api/job";
             const res= await axios.post(url,data);
+            getjob();
             
           } catch (error) {
             if (
@@ -34,10 +36,28 @@ export default function Recuitar(){
           }
           
         }
+    function handleDelete(company){
+      console.log("here")
+      try{
+        const com={Company:company}
+        console.log("inside try")
+        const url="http://localhost:8081/api/deljob";
+        const resp=axios.post(url,com)
+        getjob();
+      }
+      catch(error){
+        if (
+          error.response &&
+          error.response.status >= 400 &&
+          error.response.status <= 500
+        ) {
+          setError(error.response.data.message);
+        }
+      }
+      
+    }
 
-      // const getjob=async() => {
-      useEffect(()=>{
-        
+      function getjob(){
         axios.post('http://localhost:8081/api/getjob').then(res=>{
           console.log(res.data)
           setresponseData(res.data);
@@ -45,6 +65,10 @@ export default function Recuitar(){
           console.log(err);
         })
       console.log("responce",responseData);
+      }
+
+      useEffect(()=>{
+        getjob();
       },[]);
 
 
@@ -92,12 +116,12 @@ export default function Recuitar(){
                     </td>
 
                     <td>
-                      {responseData.date}
+                      {responseData.date.substring(0,10)}
                     </td>
 
                     <td>
                       <div className="button_style">
-                        <a href="#" className="btn btn-link btn-sm btn-rounded"><span>delete</span></a>
+                        <Button onClick={()=>handleDelete(responseData.Company)}  className="btn btn-link btn-sm btn-rounded"><span>delete</span></Button>
                       </div>
                     </td>
                   </tr>
@@ -142,6 +166,9 @@ export default function Recuitar(){
             <Button variant="primary" onClick={handleSubmit}>
               Save 
             </Button>
+            {/* <Button variant="primary" onClick={()=>handleSubmit()}>
+              Save 
+            </Button> */}
           </Modal.Footer>
         </Modal>
        
