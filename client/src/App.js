@@ -14,21 +14,24 @@ import Dashboard_rec from "./components/UI_comp/Dashboard_rec";
 function App() {
 	
 	const user = localStorage.getItem("token");
+	const rec=localStorage.getItem("token1");
 
 	return (
 		<Routes>
 			
 			{user && <Route path="/" exact element={<><Sidebar_copy/><Dashboard flag="1"/></>} />}
+			{rec && <Route path="/" exact element={<><Sidebar_rec/><Dashboard_rec flag="1"/></>}/>}
 			<Route path="/signup" exact element={<Signup />} />
 			<Route path="/signup_rec" exact element={<Signup_rec />} />
 			<Route path="/login" exact element={<Login />} />
 			<Route path="/login_rec" exact element={<Login_recruitar/>}/>
 			<Route path="/main_login" exact element={<Select_log />}/>
+			<Route path="/main_rec" exact element={<><Sidebar_rec/><Dashboard_rec flag="1"/></>}/>
 			<Route path="/" element={<Navigate replace to="/main_login" />} />
 			<Route path="/" exact element={<><Sidebar_copy/><Dashboard flag="1"/></>}></Route>
 			<Route path="/profile/status" exact element={<><Sidebar_copy/><Dashboard flag="2"/></>}></Route>
 			<Route path="/profile/update" exact element={<Profile_com/>}/>
-			<Route path="/main_rec" exact element={<><Sidebar_rec/><Dashboard_rec flag="1"/></>}/>
+			
 			<Route path='/AddLink' exact element={<><Sidebar_rec/><Dashboard_rec flag="1"/></>}/>
 			
 		</Routes>

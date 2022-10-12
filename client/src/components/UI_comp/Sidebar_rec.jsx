@@ -44,7 +44,7 @@ export default function Sidebar() {
     );
   }, []);
   const handleLogout=()=>{
-    localStorage.removeItem("token");
+    localStorage.removeItem("token1");
 		window.location.reload();
   }
 
@@ -55,7 +55,7 @@ export default function Sidebar() {
         <div className="top">
           <div className="brand">
             {/* <FaTaxi /> */} 
-            <span> Recuiter Dashboard Dashboard</span> 
+            <span> Recuiter  Dashboard</span> 
           </div> 
           
           <div className="links">

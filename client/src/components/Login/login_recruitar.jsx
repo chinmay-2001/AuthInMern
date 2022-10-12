@@ -17,8 +17,9 @@ const Login_recruitar = () => {
 		try {
 			const url = "http://localhost:8081/api/authr";
 			const { data: res } = await axios.post(url, data);
-			localStorage.setItem("token", res.data);
+			localStorage.setItem("token1", res.data);
 			window.location = "/";
+			// window.location.reload();
 			return <Navigate replace to="/main_rec"/>
 		} catch (error) {
 			if (
